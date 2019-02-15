@@ -1,11 +1,11 @@
 @charset "UTF-8";
-
 /* 
     styles.css
 	- Document: ES6-STARTER - Main Styles
 	- Client:   N/A
     - Author:   Edward Bradley (@edbradleyweb)
 */
+
 /* --------------------------------------------------------- */
 /* BASIC SETUP */
 /* --------------------------------------------------------- */
@@ -13,14 +13,20 @@
 /* 
 * page defaults 
 */
+
 * {
-  /* go to the edge of the page */
   margin: 0;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
 
-  /* Include padding and border in an element's total width and height */
+  /* Include padding and border in an element's total 
+  width and height */
   box-sizing: border-box;
 }
+
+/* --------------------------------------------------------- */
+/*  */
+/* --------------------------------------------------------- */
 
 /* dummy class selector - test auto-prefixer */
 .dummy {
@@ -32,6 +38,6 @@
   }
 
 /* confirm that css works */
-div{
-    color: blue;
+h1{
+    color: darkgray;
 }

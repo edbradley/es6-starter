@@ -5,14 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="<%=htmlWebpackPlugin.files.chunks.main.css %>"
     />
-    <title>WebPack Document</title>
+    <title>Document</title>
   </head>
   <body>
-    <div>Hello, WebPack World!</div>
+    <h1>Hello, webpack World!</h1>
+    <p>https://github.com/edbradley/es6-starter#readme</p>
     <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
   </body>
 </html>

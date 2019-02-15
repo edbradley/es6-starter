@@ -1,7 +1,8 @@
 // applicaion - MVC - Controller module
 
-// include css file w/ webpack entry point
+// include other files w/ webpack entry point
 import "../css/styles.css";
+import "../assets/static/favicon.ico"
 
 // include references to external module files (Model & View)
 import x from "./models/Sample";

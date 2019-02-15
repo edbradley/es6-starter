@@ -16,16 +16,16 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackMd5Hash = require("webpack-md5-hash");
 
 // keep the build/dist folder clean
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 /**
- * dist/build workflow
+ * build/dist workflow
  */
 module.exports = {
-  entry: { main: "./src/js/index.js" },
+  entry: ["babel-polyfill", "./src/js/index.js"],
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].[chunkhash].js"
+    filename: "bundle.[chunkhash].js"
   },
   module: {
     rules: [
@@ -44,19 +44,24 @@ module.exports = {
           "css-loader",
           "postcss-loader"
         ]
+      },
+      {
+        test: /\.ico$/i,
+        loader: "file-loader?name=[name].[ext]"
       }
     ]
   },
   plugins: [
-    new CleanWebpackPlugin('dist', {} ),
+    new CleanWebpackPlugin("dist", {}),
     new MiniCssExtractPlugin({
-      filename: "style.[contenthash].css"
+      filename: "styles.[contenthash].css"
     }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
       template: "./src/index.html",
-      filename: "index.html"
+      filename: "index.html",
+      favicon: "./src/assets/static/favicon.ico"
     }),
     new WebpackMd5Hash()
   ]
