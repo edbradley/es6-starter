@@ -1,2 +1,2 @@
 # es6-starter
-A Web development workflow starter project
+A modern Web development workflow starter project
