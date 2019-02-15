@@ -19,7 +19,7 @@ const WebpackMd5Hash = require("webpack-md5-hash");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 /**
- * build workflow
+ * dist/build workflow
  */
 module.exports = {
   entry: { main: "./src/js/index.js" },
