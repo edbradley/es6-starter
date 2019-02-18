@@ -6,27 +6,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" href="favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="<%=htmlWebpackPlugin.files.chunks.main.css %>"
-    />
+    <!-- CSS File(s) -->
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>"/>
     <title>Document</title>
   </head>
   <body>
-    <h1>Hello, webpack World!</h1>
-    <h2>Today's Weather:</h2>
-    <!-- START: Zip Code entry Form -->
-    <form class="zipCodeForm">
-      <input type="text"class="zipCode__field" placeholder="Enter a valid Zip Code..."/>
-      <button class="btn btn-full zipCode__btn">
-        <span>Get Today's Weather</span>
-      </button>
-    </form>
-    <!-- END: Zip Code entry Form -->
+    <div class="container">
+      <h1>Hello, webpack World!</h1>
+    </div>
+
+    <div class="container">
+      <!-- START: Zip Code entry Form -->
+      <form class="form-inline zipCodeForm">
+        <label class="sr-only" for="inlineFormInputName2">Name</label>
+        <input
+          type="text"
+          class="form-control mb-2 mr-sm-2 zipCode__field"
+          placeholder="Enter a valid Zip Code..."
+        />
+        <button type="submit" class="btn btn-primary mb-2 zipCode__btn">
+          Submit
+        </button>
+      </form>
+      <!-- END: Zip Code entry Form -->
+      <h4>Today's Weather:</h4>
+    </div>
+
+    <!-- START: Weather information Table -->
+    <div class="container weatherTable">
+      <!--
+      <table class="table table-sm table-striped table-bordered">
+        <tbody>
+          <tr>
+            <td><b>Reading As Of:</b></th>
+            <td>Jan, 1 2010 @ 10:00 AM</td>
+          </tr>
+          <tr>
+            <td><b>City/Station:</b></th>
+            <td>Chicago</td>
+          </tr>
+          <tr>
+            <td><b>Current Temp:</b></th>
+            <td>99</td>
+          </tr>
+          <tr>
+            <td><b>High Temp:</b></th>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td><b>Low Temp:</b></th>
+            <td>88</td>
+          </tr>
+          <tr>
+            <td><b>Sunrise:</b></th>
+            <td>6:00 AM</td>
+          </tr>
+          <tr>
+            <td><b>Sunset:</b></th>
+            <td>7:30 PM</td>
+          </tr>
+          <tr>
+            <td><b>Conditions:</b></th>
+            <td>Clear</td>
+          </tr>
+          <tr>
+            <td><b>Humidity:</b></th>
+            <td>40 %</td>
+          </tr>
+          <tr>
+            <td><b>Windspeed:</b></th>
+            <td>2 MPH</td>
+          </tr>
+        </tbody>
+      </table>
+      -->
+    </div>
+    <!-- END: Weather information Table -->
+
+    <!-- Javascript File(s) -->
     <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
   </body>
 </html>

@@ -1,8 +1,12 @@
 // APPLICATION - MVC - Controller MODULE
 
 // include other files w/ webpack entry point
+import 'jquery';
+import 'popper.js';
+import 'bootstrap';
+import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "../css/styles.css";
-import "../assets/static/favicon.ico";
 
 // include app configuration
 
@@ -19,7 +23,7 @@ const state = {};
 console.log("ES6-starter - webpack workflow - Version 1.0.0");
 
 /**
- * SAMPLE CONTROLLER
+ * WEATHER CONTROLLER
  */
 const controlWeather = async () => {
   state.weather = new Weather(state.zipCode);
@@ -34,7 +38,8 @@ const controlWeather = async () => {
     if (JSON.stringify(state.weather.todaysWeather.status) === "404") {
       console.log(`Error: City Not Found for Zip Code ${state.zipCode}`);
     } else {
-      weatherView.displayWeather(state.weather.todaysWeather.data);
+      weatherView.displayWeather(state.weather.todaysWeather.data, state.zipCode);
+      weatherView.clearInput();
     }
   } catch (error) {
     console.log(error);
@@ -43,9 +48,7 @@ const controlWeather = async () => {
 
 };
 
-
 /* define event listner(s) */
-
 // EVENT: page load
 window.addEventListener('load', () => {
   
@@ -61,7 +64,6 @@ window.addEventListener('load', () => {
   };
 
 });
-
 
 // EVENT: Zip Code submitted from form
 pageElements.zipCodeForm.addEventListener('submit', e => {
@@ -80,6 +82,9 @@ pageElements.zipCodeForm.addEventListener('submit', e => {
 
 });
 
+/**
+ * Additional functions
+ */
 const validateZipCode = (zipCode) => {
   var validZipCodePattern = /^\d{5}$|^\d{5}-\d{4}$/;
   return validZipCodePattern.test(zipCode);

@@ -1,6 +1,7 @@
 export const pageElements = {
     zipCodeForm: document.querySelector('.zipCodeForm'),
     zipCodeInput: document.querySelector('.zipCode__field'),
+    weatherTable: document.querySelector('.weatherTable')
 };
 
 export const pageElementStrings = {
