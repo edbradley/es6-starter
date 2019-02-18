@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:400,700"
       rel="stylesheet"
@@ -18,9 +18,15 @@
   </head>
   <body>
     <h1>Hello, webpack World!</h1>
-    <p>es6-starter project</p>
     <h2>Today's Weather:</h2>
-    
+    <!-- START: Zip Code entry Form -->
+    <form class="zipCodeForm">
+      <input type="text"class="zipCode__field" placeholder="Enter a valid Zip Code..."/>
+      <button class="btn btn-full zipCode__btn">
+        <span>Get Today's Weather</span>
+      </button>
+    </form>
+    <!-- END: Zip Code entry Form -->
     <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
   </body>
 </html>
