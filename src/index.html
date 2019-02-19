@@ -17,25 +17,25 @@
       </div>
     </div>
 
-    <!-- START: Zip Code entry Form -->
+    <!-- START: Weather Update Form -->
     <div class="container">
       <div class="row justify-content-center">
-        <form class="form-inline zipCodeForm">
+        <form class="form-inline weatherUpdateForm">
           <label class="sr-only" for="inlineFormInputName2">Name</label>
-          <input type="text" class="form-control mb-2 mr-sm-2 zipCode__field" placeholder="Enter a valid Zip Code..." />
-          <button type="submit" class="btn btn-primary mb-2 zipCode__btn">
-            Submit
-          </button>
+          <input type="text" class="form-control mb-2 mr-sm-2 zipCode__field" placeholder="Enter a valid Zip Code..." required />
+          <button type="submit" class="btn btn-primary mb-2 weatherUpdate__btn">Get Weather Update</button>
         </form>
       </div>
     </div>
-    <!-- END: Zip Code entry Form -->
+    <!-- END: Weather Update Form -->
 
     <!-- START: Weather information Table -->
-    <div class="container card weatherTable">
+    <div class="container ">
       <div class="row justify-content-center">
-        <h4>Today's Weather:</h4>
-        <!-- *Weather info inserted here* -->
+        <div class="card col col-xl-6 col-lg-6 col-md-8 col-sm-10 weatherTable">
+          <h4>Today's Weather:</h4>
+          <!-- *Weather info inserted here* -->
+        </div>
       </div>
     </div>
     <!-- END: Weather information Table -->

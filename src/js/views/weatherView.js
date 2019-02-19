@@ -27,14 +27,11 @@ export const displayWeather = (w, zipCode) => {
       console.log(`Windspeed: ${w.wind.speed} MPH`);
     }
 
-    // clear previous details table (if it exists)
-    const wt = document.querySelector(`.weatherTbl`);
-    if (wt) wt.parentElement.removeChild(wt);
-
-    // build error message detail
+    // build weather details (html table)
     let weatherHtml = ``;
+
     if (w.cod === "404") {
-      weatherHtml = `<h3 class="weatherTbl">Error: City Not found for Zip Code: ${zipCode}</h3>`;
+      weatherHtml = `<h3 class="text-danger weatherTbl">Error: City Not found for Zip Code: ${zipCode}</h3>`;
     } else {
       weatherHtml = `
       <table class="table table-sm table-striped table-bordered table-condensed weatherTbl">

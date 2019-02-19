@@ -71,7 +71,7 @@ window.addEventListener('load', () => {
 });
 
 // EVENT: Zip Code submitted from form
-pageElements.zipCodeForm.addEventListener('submit', e => {
+pageElements.weatherUpdateForm.addEventListener('submit', e => {
   e.preventDefault();
   
   // get submitted Zip Code

@@ -28,7 +28,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
  * build/dist workflow
  */
 module.exports = {
-  entry: ["babel-polyfill", "./src/js/index.js"],
+  entry: ["babel-polyfill", "./src/js/app.js"],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.[chunkhash].js"

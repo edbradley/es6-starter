@@ -5,10 +5,12 @@
 	- Client:   N/A
     - Author:   Edward Bradley (@edbradleyweb)
 */
+/* shrink table */
 .weatherTbl {
   font-size: 80%;
 }
 
+/* spin the loader icon  */
 .loader {
   margin: 5rem auto;
   text-align: center;
@@ -29,3 +31,8 @@
     transform: rotate(360deg);
   }
 }
+
+/* set weather update button to fill horizontally on small displays */
+@media all and (max-width:576px) {
+    .weatherUpdate__btn { width: 100%; display:block; }
+ }   

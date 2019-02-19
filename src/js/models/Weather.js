@@ -1,7 +1,7 @@
 // APPLICATION - MVC - Weather MODEL MODULE
 
 // include application configuration
-import { apiKey_openweathermap_org } from "../config";
+import { apiKey_openweathermap_org, weather_units_openweathermap_org } from "../config";
 
 // http client (https://www.npmjs.com/package/axios)
 import axios from "axios";
@@ -22,7 +22,7 @@ export default class Weather {
    */
   async getTodaysWeather() {
     try {
-      const response = await axios(`http://api.openweathermap.org/data/2.5/weather?zip=${this.zipCode},us&APPID=${apiKey_openweathermap_org}&units=imperial`);
+      const response = await axios(`http://api.openweathermap.org/data/2.5/weather?zip=${this.zipCode},us&APPID=${apiKey_openweathermap_org}&units=${weather_units_openweathermap_org}`);
       console.log(`API Call Response: ${JSON.stringify(response)}`);
       this.todaysWeather = response;
       this.todaysWeather.status = response.status
