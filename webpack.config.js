@@ -1,5 +1,4 @@
 // webpack v4 configuration
-const webpack = require('webpack');
 
 // get access to build/dist file path
 const path = require("path");
@@ -7,6 +6,9 @@ const path = require("path");
 /**
  * webpack Plug-ins
  */
+// include built-in plug-ins
+const webpack = require("webpack");
+
 // compile/inject css bundle into build/dist HTML
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -31,6 +33,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.[chunkhash].js"
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -78,9 +81,10 @@ module.exports = {
       favicon: "./src/assets/static/favicon.ico"
     }),
     new WebpackMd5Hash(),
-    new CopyWebpackPlugin([
-      {from:'src/assets/img',to:'img'} 
-    ]),
+    new CopyWebpackPlugin([{
+      from:'src/assets/img', 
+      to:'img'
+    }]),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",

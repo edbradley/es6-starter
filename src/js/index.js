@@ -7,13 +7,14 @@ import 'bootstrap';
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../css/styles.css";
+import "../assets/static/icons.svg";
 
 // include app configuration
 
 // include references to external module files (Model & View)
 import Weather from "./models/Weather";
 import * as weatherView from './views/weatherView';
-import { pageElements, renderLoader, clearLoader } from './views/base';
+import { pageElements, renderLoader, clearLoader, clearWeather } from './views/base';
 
 /**
  * GLOBAL APP STATE
@@ -31,19 +32,23 @@ const controlWeather = async () => {
 
   // get and display the current day's weather
   try {
-    await state.weather.getTodaysWeather();
+    clearWeather();
+    renderLoader(pageElements.weatherTable);
+    await state.weather.getTodaysWeather()
+    .then(() => new Promise(resolve => setTimeout(resolve, 1500)))
     console.log(`Weather Status: ${JSON.stringify(state.weather.todaysWeather.status)}`);
     console.log(`Weather Data: ${JSON.stringify(state.weather.todaysWeather.data)}`);
+    clearLoader();
 
     if (JSON.stringify(state.weather.todaysWeather.status) === "404") {
       console.log(`Error: City Not Found for Zip Code ${state.zipCode}`);
-    } else {
-      weatherView.displayWeather(state.weather.todaysWeather.data, state.zipCode);
-      weatherView.clearInput();
-    }
+    } 
+    weatherView.displayWeather(state.weather.todaysWeather.data, state.zipCode);
+    weatherView.clearInput();
   } catch (error) {
-    console.log(error);
-    alert(`There was an error getting the weather: ${error}`);
+    console.log(`There was an error getting the weather: ${error}`);
+    weatherView.displayWeather(state.weather.todaysWeather.data, state.zipCode);
+    weatherView.clearInput();
   }
 
 };

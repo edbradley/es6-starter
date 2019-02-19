@@ -8,78 +8,35 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <!-- CSS File(s) -->
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>"/>
-    <title>Document</title>
+    <title>Hello, webpack world</title>
   </head>
   <body>
     <div class="container">
-      <h1>Hello, webpack World!</h1>
+      <div class="row justify-content-center">
+        <h1>Hello, webpack World!</h1>
+      </div>
     </div>
 
+    <!-- START: Zip Code entry Form -->
     <div class="container">
-      <!-- START: Zip Code entry Form -->
-      <form class="form-inline zipCodeForm">
-        <label class="sr-only" for="inlineFormInputName2">Name</label>
-        <input
-          type="text"
-          class="form-control mb-2 mr-sm-2 zipCode__field"
-          placeholder="Enter a valid Zip Code..."
-        />
-        <button type="submit" class="btn btn-primary mb-2 zipCode__btn">
-          Submit
-        </button>
-      </form>
-      <!-- END: Zip Code entry Form -->
-      <h4>Today's Weather:</h4>
+      <div class="row justify-content-center">
+        <form class="form-inline zipCodeForm">
+          <label class="sr-only" for="inlineFormInputName2">Name</label>
+          <input type="text" class="form-control mb-2 mr-sm-2 zipCode__field" placeholder="Enter a valid Zip Code..." />
+          <button type="submit" class="btn btn-primary mb-2 zipCode__btn">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
+    <!-- END: Zip Code entry Form -->
 
     <!-- START: Weather information Table -->
-    <div class="container weatherTable">
-      <!--
-      <table class="table table-sm table-striped table-bordered">
-        <tbody>
-          <tr>
-            <td><b>Reading As Of:</b></th>
-            <td>Jan, 1 2010 @ 10:00 AM</td>
-          </tr>
-          <tr>
-            <td><b>City/Station:</b></th>
-            <td>Chicago</td>
-          </tr>
-          <tr>
-            <td><b>Current Temp:</b></th>
-            <td>99</td>
-          </tr>
-          <tr>
-            <td><b>High Temp:</b></th>
-            <td>100</td>
-          </tr>
-          <tr>
-            <td><b>Low Temp:</b></th>
-            <td>88</td>
-          </tr>
-          <tr>
-            <td><b>Sunrise:</b></th>
-            <td>6:00 AM</td>
-          </tr>
-          <tr>
-            <td><b>Sunset:</b></th>
-            <td>7:30 PM</td>
-          </tr>
-          <tr>
-            <td><b>Conditions:</b></th>
-            <td>Clear</td>
-          </tr>
-          <tr>
-            <td><b>Humidity:</b></th>
-            <td>40 %</td>
-          </tr>
-          <tr>
-            <td><b>Windspeed:</b></th>
-            <td>2 MPH</td>
-          </tr>
-        </tbody>
-      </table>
-      -->
+    <div class="container card weatherTable">
+      <div class="row justify-content-center">
+        <h4>Today's Weather:</h4>
+        <!-- *Weather info inserted here* -->
+      </div>
     </div>
     <!-- END: Weather information Table -->
 
