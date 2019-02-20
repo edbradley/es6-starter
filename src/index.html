@@ -11,39 +11,39 @@
     <title>Hello, webpack world</title>
   </head>
   <body>
-    <div class="container">
-      <div class="row justify-content-center">
-        <h1>Hello, webpack World!</h1>
-      </div>
-    </div>
-
-    <!-- START: Weather Update Form -->
-    <div class="container">
-      <div class="row justify-content-center">
-        <form class="form-inline weatherUpdateForm">
-          <label class="sr-only" for="inlineFormInputName2">Name</label>
-          <input type="text" class="form-control mb-2 mr-sm-2 zipCode__field" placeholder="Enter a valid Zip Code..." required />
-          <button type="submit" class="btn btn-primary mb-2 weatherUpdate__btn">Get Weather Update</button>
-        </form>
-      </div>
-    </div>
-    <!-- END: Weather Update Form -->
-
-    <!-- START: Weather information -->
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="card col col-xl-6 col-lg-6 col-md-8 col-sm-10 weatherCard">
-          <h4>Today's Weather:</h4>
-          <div class="weatherTable">
-            <!-- * weather details table gets inserted here * -->
-          </div>
-          <div class="map">
-            <!-- * Google Map gets inserted here * -->
+      <div class="container">
+          <div class="row justify-content-center hello">
+            <h1>Hello, webpack World!</h1>
           </div>
         </div>
-      </div>
-    </div>
-    <!-- END: Weather information -->
+    
+        <!-- START: Weather Update Form -->
+        <div class="container">
+          <div class="row justify-content-center">
+            <form class="form-inline weatherUpdateForm">
+              <label class="sr-only" for="inlineFormInputName2">Name</label>
+              <input type="text" class="form-control mb-2 mr-sm-2 zipCode__field" placeholder="Enter a valid Zip Code..." required />
+              <button type="submit" class="btn btn-primary mb-2 weatherUpdate__btn">Get Weather Update</button>
+            </form>
+          </div>
+        </div>
+        <!-- END: Weather Update Form -->
+    
+        <!-- START: Weather information -->
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="card col col-xl-6 col-lg-6 col-md-8 col-sm-10 weatherCard">
+              <h4>Today's Weather:</h4>
+              <div class="weatherTable">
+                <!-- * weather details table gets inserted here * -->
+              </div>
+              <div class="map">
+                <!-- * Google Map gets inserted here * -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END: Weather information -->
 
     <!-- Javascript File(s) -->
     <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>

@@ -43,9 +43,10 @@ export const displayWeather = (w, zipCode) => {
 
   // load Google Map
   if (w.cod === 200) {
+    console.log(`loading map...`)
     loadGoogleMapsApi({ key: apiKey_google_maps })
       .then(function (googleMaps) {
-        console.log(`loading map...`)
+        console.log(`map loaded!`)
         new googleMaps.Map(pageElements.weatherMap, {
           center: {
             lat: w.coord.lat,
@@ -116,7 +117,6 @@ export const displayWeather = (w, zipCode) => {
   pageElements.weatherTable.insertAdjacentHTML('afterbegin', weatherHtml);
 
 };
-
 
 /**
  * convert/extract/reformat a clock time for human readablity

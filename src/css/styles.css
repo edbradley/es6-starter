@@ -5,9 +5,33 @@
 	- Client:   N/A
     - Author:   Edward Bradley (@edbradleyweb)
 */
+
+body {
+  background-image: -webkit-linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(/img/ai-artificial-intelligence-blur-546819.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(/img/ai-artificial-intelligence-blur-546819.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.hello {
+  color: white;
+}
+
 /* shrink table */
 .weatherTbl {
   font-size: 80%;
+}
+
+.weatherCard {
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
 /* spin the loader icon  */
@@ -48,12 +72,6 @@
 }
 
 /* Google map visibility */
-.hide_map{
-    visibility: hidden;
-}
-
-/* Weather Card */
-.weatherCard{
-    padding-top: 5px;
-    padding-bottom: 10px;
+.hide_map {
+  visibility: hidden;
 }
