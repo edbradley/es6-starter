@@ -29,16 +29,21 @@
     </div>
     <!-- END: Weather Update Form -->
 
-    <!-- START: Weather information Table -->
-    <div class="container ">
+    <!-- START: Weather information -->
+    <div class="container">
       <div class="row justify-content-center">
-        <div class="card col col-xl-6 col-lg-6 col-md-8 col-sm-10 weatherTable">
+        <div class="card col col-xl-6 col-lg-6 col-md-8 col-sm-10 weatherCard">
           <h4>Today's Weather:</h4>
-          <!-- *Weather info inserted here* -->
+          <div class="weatherTable">
+            <!-- * weather details table gets inserted here * -->
+          </div>
+          <div class="map">
+            <!-- * Google Map gets inserted here * -->
+          </div>
         </div>
       </div>
     </div>
-    <!-- END: Weather information Table -->
+    <!-- END: Weather information -->
 
     <!-- Javascript File(s) -->
     <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>

@@ -18,7 +18,7 @@
 .loader svg {
   height: 5.5rem;
   width: 5.5rem;
-  fill:#007bff;
+  fill: #007bff;
   transform-origin: 44% 50%;
   animation: rotate 1.5s infinite linear;
 }
@@ -33,6 +33,27 @@
 }
 
 /* set weather update button to fill horizontally on small displays */
-@media all and (max-width:576px) {
-    .weatherUpdate__btn { width: 100%; display:block; }
- }   
+@media all and (max-width: 576px) {
+  .weatherUpdate__btn {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Google Maps: Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+.map {
+  height: 300px;
+  width: 100%;
+}
+
+/* Google map visibility */
+.hide_map{
+    visibility: hidden;
+}
+
+/* Weather Card */
+.weatherCard{
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
