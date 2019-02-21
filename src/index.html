@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- webpack HTML build template -->
+<!-- webpack 4 HTML build template -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,20 +17,20 @@
         </div>
       </div>
     
-      <!-- START: Weather Update Form -->
+      <!-- START: Weather Update Zip Code entry Form -->
       <div class="container">
         <div class="row justify-content-center">
           <form class="form-inline weatherUpdateForm">
             <label class="sr-only" for="inlineFormInputName2">Name</label>
-            <input type="text" class="form-control mb-2 mr-sm-2 zipCode__field" placeholder="Enter a valid Zip Code..."
+            <input type="text" class="form-control mb-2 mr-sm-2 zipCode__field" placeholder="Enter a valid US Zip Code..."
               required />
             <button type="submit" class="btn btn-primary mb-2 weatherUpdate__btn">Get Weather Update</button>
           </form>
         </div>
       </div>
-      <!-- END: Weather Update Form -->
+      <!-- END: Weather Update Zip Code Entry Form -->
     
-      <!-- START: Weather information -->
+      <!-- START: Weather information Card -->
       <div class="container">
         <div class="row justify-content-center">
           <div class="card col col-xl-6 col-lg-6 col-md-8 col-sm-10 weatherCard">
@@ -44,7 +44,7 @@
           </div>
         </div>
       </div>
-      <!-- END: Weather information -->
+      <!-- END: Weather information Card -->
 
     <!-- Javascript File(s) -->
     <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
