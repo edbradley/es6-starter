@@ -1,2 +1,4 @@
 # es6-starter
-A modern Web development workflow starter project
+A modern webpack-based Web development workflow starter project.
+
+![Starter Page](es6-starter.png)
