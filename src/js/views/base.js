@@ -1,4 +1,4 @@
-/* static page elements */
+/* static page element mappings */
 export const pageElements = {
     weatherUpdateForm: document.querySelector('.weatherUpdateForm'),
     zipCodeInput: document.querySelector('.zipCode__field'),
@@ -6,12 +6,16 @@ export const pageElements = {
     weatherMap: document.querySelector('.map')
 };
 
-/* dynamic page elements */
+/* dynamic page element mappings */
 export const pageElementStrings = {
     loader: 'loader'
 };
 
-// display spinning loader icon
+/**
+ * @name renderLoader
+ * Display spinning loader icon (during an async process). 
+ * @param {*} parent html parent element for rendered loader
+ */
 export const renderLoader = parent => {
     const loader = `
         <div class="row justify-content-center ${pageElementStrings.loader}">
@@ -24,7 +28,8 @@ export const renderLoader = parent => {
 };
 
 /**
- * clear spinning loader icon
+ * @name clearLoader
+ * Clear spinning loader icon (after an async process).
  */
 export const clearLoader = () => {
     const loader = document.querySelector(`.${pageElementStrings.loader}`);
@@ -32,7 +37,8 @@ export const clearLoader = () => {
 };
 
 /**
- * clear weather look-up results
+ * @name clearWeather
+ * Clear Weather look-up results
  */
 export const clearWeather = () => {
     const wt = document.querySelector(`.weatherTbl`);
@@ -40,7 +46,8 @@ export const clearWeather = () => {
 };
 
 /**
- * show/hide map
+ * @name showMap
+ * show/hide Google map
  * @param {*} sw boolen yes/no, true/false value
  */
 export const showMap = (sw) => {

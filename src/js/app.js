@@ -1,19 +1,21 @@
 // APPLICATION - MVC - Controller MODULE
 
 // include other files w/ webpack entry point
-import 'jquery';
-import 'popper.js';
-import 'bootstrap';
+//import 'jquery';  /* Bootstrap JS Componnents (not being used) */
+//import 'popper.js';   
+//import 'bootstrap'; 
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../css/styles.css";
 import "../assets/static/icons.svg";
 import "load-google-maps-api";
 
-// include references to external module files (Model & View)
+// include references to external module files (Models & Views)
 import Weather from "./models/Weather";
 import * as weatherView from './views/weatherView';
-import { pageElements, renderLoader, clearLoader, clearWeather, showMap } from './views/base';
+import { pageElements, renderLoader, clearLoader, 
+  clearWeather, showMap 
+} from './views/base';
 
 /**
  * GLOBAL APP STATE
@@ -23,20 +25,21 @@ const state = {};
 console.log("ES6-starter - webpack workflow - Version 1.0.0");
 
 /**
+ * @name controlWeather
  * WEATHER CONTROLLER
  */
 const controlWeather = async () => {
   state.weather = new Weather(state.zipCode);
   console.log(`Zip code ok?: ${validateZipCode(state.zipCode)}`);
 
-  // get and display the current day's weather
+  // get Weather information from the Model and relay the results to the View
   try {
     showMap(false);
     clearWeather();
     renderLoader(pageElements.weatherTable);
     
     await state.weather.getTodaysWeather()
-    .then(() => new Promise(resolve => setTimeout(resolve, 1500)))
+    .then(() => new Promise(resolve => setTimeout(resolve, 1500))) /* add 1.5 second delay for effect */
     console.log(`Weather Status: ${JSON.stringify(state.weather.todaysWeather.status)}`);
     console.log(`Weather Data: ${JSON.stringify(state.weather.todaysWeather.data)}`);
     
@@ -51,7 +54,7 @@ const controlWeather = async () => {
     weatherView.displayWeather(state.weather.todaysWeather.data, state.zipCode);
     weatherView.clearInput();
   } catch (error) {
-    console.log(`There was an error getting the weather: ${error}`);
+    console.error(`There was an error getting the weather: ${error}`);
     weatherView.displayWeather(state.weather.todaysWeather.data, state.zipCode);
     weatherView.clearInput();
   }
@@ -71,7 +74,7 @@ window.addEventListener('load', () => {
   if (validateZipCode(state.zipCode)) {
     controlWeather();
   } else {
-    console.log(`ERROR: ${state.zipCode} is an invalid Zip Code`);
+    console.error(`ERROR: ${state.zipCode} is an invalid Zip Code`);
     alert(`ERROR: ${state.zipCode} is an invalid Zip Code`);
   };
 
@@ -88,14 +91,15 @@ pageElements.weatherUpdateForm.addEventListener('submit', e => {
   if (validateZipCode(state.zipCode)) {
     controlWeather();
   } else {
-    console.log(`ERROR: ${state.zipCode} is an invalid Zip Code`);
+    console.error(`ERROR: ${state.zipCode} is an invalid Zip Code`);
     alert(`ERROR: ${state.zipCode} is an invalid Zip Code`);
   };
 
 });
 
  /**
-  * validate a Zip Code
+  * @name validateZipCode
+  * Validate a Zip Code value (5 or 9 digits).
   * @param {*} zipCode 
   */
 const validateZipCode = (zipCode) => {

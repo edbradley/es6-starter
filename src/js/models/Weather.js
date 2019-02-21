@@ -17,6 +17,7 @@ export default class Weather {
   }
 
   /**
+   * @name getTodaysWeather
    * Get Today's Current Weather Data - by Zip Code (via asynchronus Internet API call)
    * https://openweathermap.org
    */

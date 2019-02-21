@@ -3,26 +3,29 @@
 // Google Maps API
 import loadGoogleMapsApi from 'load-google-maps-api';
 
-// get references to HTML page elements
+// get references to View (HTML page) elements
 import { pageElements } from './base';
 
 // include application configuration
 import { apiKey_google_maps } from "../config";
 
 /**
- * get Zip Code from input field
+ * @name getZipCodeInput
+ * Get Zip Code value from the Form input field.
  */
 export const getZipCodeInput = () => pageElements.zipCodeInput.value;
 
 /**
- * clear Zip Code input field
+ * @name clearInput
+ * Clear information from the Zip Code Form input field.
  */ 
 export const clearInput = () => {
     pageElements.zipCodeInput.value = '';
 };
 
 /**
- * display formatted Weather information on page
+ * @name displayWeather
+ * Display formatted Weather information in the View (HTML page).
  * @param {*} w weather data
  * @param {*} zipCode zip code
  */
@@ -41,7 +44,7 @@ export const displayWeather = (w, zipCode) => {
     console.log(`Windspeed: ${w.wind.speed} MPH`);
   }
 
-  // load Google Map
+  // load Google Map (using coordinates from the Weather data)
   if (w.cod === 200) {
     console.log(`loading map...`)
     loadGoogleMapsApi({ key: apiKey_google_maps })
@@ -59,7 +62,7 @@ export const displayWeather = (w, zipCode) => {
       })
   }
 
-  // build weather details (html table)
+  // build weather details (table)
   let weatherHtml = ``;
 
   if (w.cod === "404") {
@@ -113,13 +116,14 @@ export const displayWeather = (w, zipCode) => {
     `;
   }
 
-  // insert the html into the page 
+  // insert the results (html) into the View (HTML page) 
   pageElements.weatherTable.insertAdjacentHTML('afterbegin', weatherHtml);
 
 };
 
 /**
- * convert/extract/reformat a clock time for human readablity
+ * @name getTimeOfDay
+ * Convert/parse/reformat a the Weather data's clock time for human readablity
  * @param {*} dt UNIX date/time value (seconds since 1/1/1970)
  */
 const getTimeOfDay = (dt) => {
@@ -131,13 +135,15 @@ const getTimeOfDay = (dt) => {
 };
 
 /**
- * convert/extract/reformat a date/time for human readablity
- * @param {*} dt 
+ * @name getFullDateTime
+ * Convert/parse/reformat the Weather data's date/time for human readablity
+ * @param {*} dt UNIX date/time value (seconds since 1/1/1970)
  */
 const getFullDateTime = (dt) => {
     // convert from UNIX time
     const d = new Date(dt * 1000);
 
+    // parse date/time elements
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 
     'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const year = d.getFullYear();
@@ -148,11 +154,12 @@ const getFullDateTime = (dt) => {
     min = min.toString().padStart(2, "0")
     const sec = d.getSeconds();
 
-    // Jan 1, 1970 at 12:00 AM|PM
+    // build formatted date/time (Jan 1, 1970 at 12:00 AM|PM)
     return `${month} ${date}, ${year} at ${hour > 12 ? hour - 12 : hour}:${min} ${hour >= 12 ? "PM" : "AM"}`;
 };
 
 /**
+ * @name parseConditions
  * parse the condition values ("Rain", "Snow", "Windy", etc...) 
  * from the weather data
  * @param {*} weatherArray array of condition information

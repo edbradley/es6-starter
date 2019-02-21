@@ -3,9 +3,10 @@
     styles.css
 	- Document: ES6-STARTER - Main Styles
 	- Client:   N/A
-    - Author:   Edward Bradley (@edbradleyweb)
+  - Author:   Edward Bradley (@edbradleyweb)
 */
 
+/* background image */
 body {
   background-image: -webkit-linear-gradient(
       rgba(0, 0, 0, 0.7),
@@ -24,17 +25,18 @@ body {
   color: white;
 }
 
-/* shrink table */
+/* shrink Weather inforamion table text */
 .weatherTbl {
   font-size: 80%;
 }
 
+/* add padding to Weather info card */
 .weatherCard {
   padding-top: 5px;
   padding-bottom: 10px;
 }
 
-/* spin the loader icon  */
+/* spinning loader icon  */
 .loader {
   margin: 5rem auto;
   text-align: center;
@@ -61,6 +63,12 @@ body {
   .weatherUpdate__btn {
     width: 100%;
     display: block;
+  }
+}
+/* set Hello World text to smaller size on mobile phone */
+@media all and (max-width: 480px) {
+  .hello {
+    font-size: 125%;
   }
 }
 
